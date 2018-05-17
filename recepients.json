@@ -1,0 +1,8 @@
+{
+  "recepients": [
+    {"name" : "Jonas Bauch", "email": "jib090994@gmail.com"},
+    {"name" : "Jonas Bauch1", "email": "jib0909942@gmail.com"},
+    {"name" : "Jonas Bauch2", "email": "jib090994@3gmail.com"},
+  ],
+  "message": "Her kommer beskeden"
+}

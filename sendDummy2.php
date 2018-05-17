@@ -1,24 +1,38 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jibba
- * Date: 16-05-2018
- * Time: 11:27
- */
+//if "email" variable is filled out, send email
+if (isset($_REQUEST['email']))  {
 
-// the message
-$msg = "First line of text\nSecond line of text";
+    //Email information
+    $admin_email = "someone@example.com";
+    $email = $_REQUEST['jib090994@gmail.com'];
+    $subject = $_REQUEST['test'];
+    $comment = $_REQUEST['testing'];
 
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
+    //send email
+    mail($admin_email, "$subject", $comment, "From:" . $email);
 
-// send email
-if(mail("jib090994@gmail.com", "HI", $msg)){
-    echo ("<p> Email succesfully send</p>");
-} else{
-    echo ("<p> Email delivery failed</p>");
+    //Email response
+    echo "Thank you for contacting us!";
 }
 
-mail("jib090994@gmail.com","My subject",$msg);
+//if "email" variable is not filled out, display the form
+else  {
+    ?>
 
+    <form method="post">
+
+        Email: <input name="email" type="text" />
+
+        Subject: <input name="subject" type="text" />
+
+        Message:
+
+        <textarea name="comment" rows="15" cols="40"></textarea>
+
+        <input type="submit" value="Submit" />
+    </form>
+
+    <?php
+}
+?>
 
